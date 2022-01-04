@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  sde:
+    external: true
+
+services:
+  reverse-proxy:
+    build: .
+    networks:
+      - sde
+    ports:
+      - "80:80"
+      - "443:443"
